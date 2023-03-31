@@ -6,59 +6,79 @@
 
 body{
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  background-color: orange;
+  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
   color: white;
 }
 
 .main-wrapper{
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-.main-wrapper .panel{
-  text-align: center;
-  margin: 30px;
-  font-size: 1.3rem;
+.logo img{
+  margin-right: 20px;
+  width: 45px;
 }
 
-.panel button{
-  margin-top: 20px;
-  border-radius: 20px;
-  padding: 5px 10px;
-  background-color: red;
-  font-size: 1.5rem;
-  cursor: pointer;
+.logo span{
+  font-weight: bold;
+  font-size: 30px;
 }
 
-.panel button:hover{
-  background-color: rgb(96, 96, 255);
+main{
+  flex-grow: 1;
 }
 
-.container{
+
+.grid{
   display: flex;
   flex-wrap: wrap;
-  width: 600px;
-  height: 600px;
-  background-color: red;
-  display: none;
+  width: 500px;
+  height: 500px;
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
 }
 
-.show{
-  display: flex;
-}
-
-.square{
+.cell{
+  border: 2px solid rgb(255, 255, 255);
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid white;
-  cursor: pointer;
-  width: calc(100% / 10);
-  aspect-ratio: 1 / 1;
+  cursor: cell;
 }
 
-.square.clicked{
-  background-color: rgb(96, 96, 255);
+.cell.clicked{
+  background-color:rgb(18, 142, 224);
+  color: white;
+}
+
+.square100{
+  width: calc(100% / 10);
+  height: calc(100% / 10);
+}
+
+.square81{
+  width: calc(100% / 9);
+  height: calc(100% / 9);
+}
+
+.square49{
+  width: calc(100% / 7);
+  height: calc(100% / 7);
+}
+
+.cell.bomb{
+  background-color: rgb(255, 0, 0);
+  color: white;
+}
+
+.game-wrapper{
+  position: relative;
+}
+
+.end-game{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.2);
 }
